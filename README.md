@@ -1,6 +1,6 @@
 # Huffman-Coding
 Simplified implementation of huffman coding in multiple programming languages.
-# Languages
+# Programming Languages
 1) C#  
 2) Java  
 3) C++ (not implemented yet)  
