@@ -210,7 +210,7 @@ public class Main {
 		while ((character = fileReader.read()) != -1) {
 			temp = Character.toUpperCase((char) character) - 'A';
 			
-			if (temp >= 0 && temp < 26) {
+			if (temp >= 0 && temp < relativeFrequencies[1].length) {
 				text += characterCodes[temp];
 			}
 			else {
