@@ -1,0 +1,9 @@
+C:\Users\Sahedul Alam\Desktop\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.exe
+C:\Users\Sahedul Alam\Desktop\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.pdb
+C:\Users\Sahedul Alam\Desktop\Huffman Coding\Huffman Coding\obj\x86\Debug\Huffman Coding.exe
+C:\Users\Sahedul Alam\Desktop\Huffman Coding\Huffman Coding\obj\x86\Debug\Huffman Coding.pdb
+D:\Programming\Visual Studio Projects\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.exe
+D:\Programming\Visual Studio Projects\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.pdb
+D:\Programming\Visual Studio Projects\Huffman Coding\Huffman Coding\obj\x86\Debug\Huffman Coding.csprojResolveAssemblyReference.cache
+D:\Programming\Visual Studio Projects\Huffman Coding\Huffman Coding\obj\x86\Debug\Huffman Coding.exe
+D:\Programming\Visual Studio Projects\Huffman Coding\Huffman Coding\obj\x86\Debug\Huffman Coding.pdb
