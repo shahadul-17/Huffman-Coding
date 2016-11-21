@@ -13,7 +13,6 @@ public class Main {
 	private static String[] characterCodes = new String[size];
 	private static final String[] FILE_NAMES = { "decoded.txt", "encoded.txt" };
 	private static Node rootNode;		// this is the root of the huffman tree...
-	
 	private static Node[] nodes = new Node[size - 1];		// we need two relative-frequencies to create one node...
 	
 	public static void main(String[] args) {
