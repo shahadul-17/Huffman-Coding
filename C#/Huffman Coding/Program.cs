@@ -112,22 +112,6 @@ namespace Huffman_Coding
             }
         }
 
-        private string Reverse(string input)
-        {
-            char tempChar;
-            char[] charArray = input.ToCharArray();
-
-            for (int i = 0, j; i < charArray.Length / 2; i++)
-            {
-                j = charArray.Length - i - 1;
-                tempChar = charArray[i];
-                charArray[i] = charArray[j];
-                charArray[j] = tempChar;
-            }
-
-            return new string(charArray);
-        }
-
         private string GenerateCharacterCode(int index)
         {
             int relativeFrequency = relativeFrequencies[1][index];
@@ -147,22 +131,22 @@ namespace Huffman_Coding
 
             if (tempNode.left == relativeFrequency)
             {
-                charCode += "0";
+                charCode = "0" + charCode;
             }
             else if (tempNode.right == relativeFrequency)
             {
-                charCode += "1";
+                charCode = "1" + charCode;
             }
 
             while (!tempNode.Equals(rootNode))
             {
                 if (tempNode.root == tempNode.parent.left)
                 {
-                    charCode += "0";
+                    charCode = "0" + charCode;
                 }
                 else if (tempNode.root == tempNode.parent.right)
                 {
-                    charCode += "1";
+                    charCode = "1" + charCode;
                 }
 
                 if (tempNode.parent != null)
@@ -171,7 +155,7 @@ namespace Huffman_Coding
                 }
             }
 
-            return Reverse(charCode);
+            return charCode;
         }
 
         private int GetMinimumRelativeFrequency()

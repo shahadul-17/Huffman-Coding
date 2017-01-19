@@ -25,7 +25,7 @@ public class Main {
 			main.generateHuffmanTree();
 			System.out.println("\nGenerating unique codes for characters...\n");
 			
-			for (int i=0; i<characterCodes.length; i++) {
+			for (int i = 0; i < characterCodes.length; i++) {
 				characterCodes[i] = main.generateCharacterCode(i);
 				
 				System.out.println((char) (i + 'A') + " = " + characterCodes[i]);
@@ -78,26 +78,12 @@ public class Main {
 	private void loadRelativeFrequencies() throws Exception {
 		Scanner scanner = new Scanner(Main.class.getResourceAsStream("/resources/relative_frequencies"));
 		
-		for (int i=0; scanner.hasNextLine(); i++) {
+		for (int i = 0; scanner.hasNextLine(); i++) {
 			relativeFrequencies[0][i] = relativeFrequencies[1][i] = Integer.parseInt(scanner.nextLine());
 		}
 		
 		insertionSort(relativeFrequencies[0], relativeFrequencies[0].length);
 		scanner.close();
-	}
-	
-	private String getReversedString(String input) {
-		char tempChar;
-		char[] charArray = input.toCharArray();
-		
-		for (int i=0, j; i<charArray.length/2; i++) {
-			j = charArray.length - i - 1;
-			tempChar = charArray[i];
-			charArray[i] = charArray[j];
-			charArray[j] = tempChar;
-		}
-		
-		return new String(charArray);
 	}
 	
 	private String generateCharacterCode(int index) {
@@ -106,7 +92,7 @@ public class Main {
 		String charCode = "";
 		Node tempNode = null;
 		
-		for (int i=0; i<nodes.length; i++) {
+		for (int i = 0; i < nodes.length; i++) {
 			tempNode = nodes[i];
 			
 			if (tempNode.left == relativeFrequency || tempNode.right == relativeFrequency) {
@@ -115,18 +101,18 @@ public class Main {
 		}
 		
 		if (tempNode.left == relativeFrequency) {
-			charCode += "0";
+			charCode = "0" + charCode;
 		}
 		else if (tempNode.right == relativeFrequency) {
-			charCode += "1";
+			charCode = "1" + charCode;
 		}
 		
 		while (!tempNode.equals(rootNode)) {
 			if (tempNode.root == tempNode.parent.left) {
-				charCode += "0";
+				charCode = "0" + charCode;
 			}
 			else if (tempNode.root == tempNode.parent.right) {
-				charCode += "1";
+				charCode = "1" + charCode;
 			}
 			
 			if (tempNode.parent != null) {
@@ -134,7 +120,7 @@ public class Main {
 			}
 		}
 		
-		return getReversedString(charCode);
+		return charCode;
 	}
 	
 	private int getMinimumRelativeFrequency() {
