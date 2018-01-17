@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1516228313 source:d:\documents\codeblocks projects\huffman coding\main.c
+	<stdlib.h>
+	<conio.h>
+	"node.h"
+
+1516217493 d:\documents\codeblocks projects\huffman coding\node.h
+	<stdio.h>
+	<string.h>
+
+1516225676 source:d:\documents\codeblocks projects\huffman coding\node.c
+	"node.h"
+
