@@ -4,7 +4,7 @@
 #include "node.h"       // this also includes the header files stdio.h and string.h...
 
 #define MAXIMUM_RELATIVE_FREQUENCY_LENGTH 10
-#define CHARACTER_CODE_LENGTH 11
+#define MAXIMUM_CHARACTER_CODE_LENGTH 11
 #define SIZE 26     // for 26 English letters...
 #define BUFFER_LENGTH 8192      // this buffer is used to store both encoded and decoded text...
 
@@ -124,8 +124,7 @@ void generateCharacterCode(int index)
 
     struct Node *tempNode = NULL;
 
-    characterCodes[index] = malloc(sizeof(char) * CHARACTER_CODE_LENGTH);
-    characterCodes[index][0] = '\0';
+    characterCodes[index] = malloc(sizeof(char) * MAXIMUM_CHARACTER_CODE_LENGTH);
 
     for (i = 0; i < SIZE - 1; i++)
     {
@@ -228,7 +227,7 @@ int indexOf(const char *characterCode)
 
 char *decode()
 {
-    char character, characterCode[CHARACTER_CODE_LENGTH];
+    char character, characterCode[MAXIMUM_CHARACTER_CODE_LENGTH];
     int i = 0, j = 0, index = 0;
 
     FILE *file = fopen(FILE_NAMES[1], "r");
@@ -286,13 +285,13 @@ int main()
     switch (selection)
     {
     case 1:
-        i = 1;
+        selection = 1;
 
         printf("\nEncoded text = %s\n", encode());
 
         break;
     case 2:
-        i = 0;
+        selection = 0;
 
         printf("\nDecoded text = %s\n", decode());
 
@@ -303,7 +302,12 @@ int main()
         break;
     }
 
-    file = fopen(FILE_NAMES[i], "w");
+    for (i = 0; i < SIZE; i++)      // releasing all the character codes...
+    {
+        free(characterCodes[i]);
+    }
+
+    file = fopen(FILE_NAMES[selection], "w");
 
     fprintf(file, "%s", buffer);
     fclose(file);

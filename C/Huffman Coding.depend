@@ -11,3 +11,10 @@
 1516225676 source:d:\documents\codeblocks projects\huffman coding\node.c
 	"node.h"
 
+1516225676 source:d:\documents\github repositories\huffman-coding\c\node.c
+	"node.h"
+
+1516217493 d:\documents\github repositories\huffman-coding\c\node.h
+	<stdio.h>
+	<string.h>
+
